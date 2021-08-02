@@ -15,6 +15,8 @@ function addStudent(name, age, cls, email) {
 
 function getStudent(email) {
   // Logic to Get From Session or Local Storage.
+    let students = sessionStorage.getItem('students');
+    return students;
 }
 
 function removeStudent(email) {
