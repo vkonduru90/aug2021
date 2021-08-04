@@ -17,16 +17,20 @@ function addStudent(name, age, cls, email) {
       let students = JSON.parse(sessionStorage.getItem('students'));
       return students;
   }
-  function removeStudent(email1){
+  function removeStudent(email){
     let students = JSON.parse(sessionStorage.getItem('students'));
-    email1 == students.email ? sessionStorage.removeItem('students') : console.log('wrong email');
-    return students;
+    let index = students.findIndex((element)=>email===element.email);
+    students.splice(index,1);
+    sessionStorage.setItem('students', JSON.stringify(students));
   }
-  function updateStudent(email1, updateValues){
+  
+  function updateStudent(email, {name1,age,cls}){    
     let students = JSON.parse(sessionStorage.getItem('students'));
-    email1 == students.email ? students.name == name1 : console.log('wrong email');
-    email1 == students.email ? students.age  == age1 : console.log('wrong email');
-    email1 == students.email ? students.class == class1 : console.log('wrong email');
+    let index = students.findIndex((element)=>email===element.email);
+    console.log(students[index].name);    
+    students[index].name = name1;
+    students[index].age = age;
+    students[index].class = cls;
     sessionStorage.setItem('students', JSON.stringify(students));
     return students;
   }
