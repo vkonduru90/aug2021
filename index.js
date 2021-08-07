@@ -1,31 +1,16 @@
-function addStudent(name, age, cls, email) {
-  // Logic to Save in Session or Local Storage.
-  let students = sessionStorage.getItem('students');
-  students = students ? students : '[]';
-  students = JSON.parse(students);
-  students.push({
-    name,
-    age,
-    class: cls,
-    email,
-  });
-  sessionStorage.setItem('students', JSON.stringify(students));
-  return 'Student Added Successfully....';
-}
+const fse = require('fs-extra');
 
-function getStudent(email) {
-  // Logic to Get From Session or Local Storage.
-    let students = sessionStorage.getItem('students');
-    return students;
-}
-
-function removeStudent(email) {
-  // Logic to Remove From Session or Local Storage.
-}
-
-function updateStudent(email, updateValues) {
-  // Logic to Update
-}
-
-// updateStudent('vkonduru90@gmail.com', { name: 'venkatesh', class: '9th' });
-addStudent('KK', 20, 10, 'vkonduru90@gmail.com');
+fse.readFile('README.md', 'utf-8', (err,data)=> {
+  console.log(err, data);
+  fse.exists('./bkp',(err, result)=>{
+    console.log(err, result, '======')
+      if(!err){
+      console.log('No folder present with name bkp....');
+      }
+      fse.exists('./bkp/README_bkp.md', (err, result)=>{
+        if(!err){
+          console.log('No file present with name bkp...')
+        }
+      })
+  })
+})
