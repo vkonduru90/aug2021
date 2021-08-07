@@ -14,7 +14,7 @@ fse.readFile('README.md', 'utf-8',  (err, data) => {
                 console.log(err, result, 'ensureDir******');
             })
         }
-         fse.exists('./bkp/README_bkp.md', chkWriteFile = (err, result) => {
+         fse.exists('./bkp/README_bkp.md', (err, result) => {
             if(!err) {
                 fse.ensureFile('./bkp/README_bkp.md', (err, result) => {
                     console.log(err, result, 'ensureFile*******');
