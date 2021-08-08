@@ -1,0 +1,70 @@
+Node.js
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+Node.js
+Node.js logo.svg
+Original author(s)	Ryan Dahl
+Developer(s)	OpenJS Foundation
+Initial release	May 27, 2009; 12 years ago[1]
+Stable release	
+16.4.0[2] Edit this on Wikidata / June 23, 2021; 45 days ago
+Repository	
+github.com/nodejs/node
+Edit this at Wikidata
+Written in	C, C++, JavaScript
+Operating system	z/OS, Linux, macOS, Microsoft Windows, SmartOS, FreeBSD, OpenBSD, IBM AIX[3]
+Type	Runtime environment
+License	MIT License[4][5]
+Website	nodejs.org 
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server-side and client-side scripts.
+
+Though .js is the standard filename extension for JavaScript code, the name "Node.js" doesn't refer to a particular file in this context and is merely the name of the product. Node.js has an event-driven architecture capable of asynchronous I/O. These design choices aim to optimize throughput and scalability in web applications with many input/output operations, as well as for real-time Web applications (e.g., real-time communication programs and browser games).[7]
+
+The Node.js distributed development project was previously governed by the Node.js Foundation,[8] and has now merged with the JS Foundation to form the OpenJS Foundation, which is facilitated by the Linux Foundation's Collaborative Projects program.[9]
+
+Corporate users of Node.js software include GoDaddy,[10] Groupon,[11] IBM,[12] LinkedIn,[13][14] Microsoft,[15][16] Netflix,[17] PayPal,[18][19] Rakuten, SAP,[20] Voxer,[21] Walmart,[22] Yahoo!,[23] and Amazon Web Services.[24]
+
+
+Contents
+1	History
+2	Overview
+2.1	Platform architecture
+2.2	Industry support
+3	Releases
+4	Technical details
+4.1	Internals
+4.2	Threading
+4.3	V8
+4.4	Package management
+4.5	Unified API
+4.6	Event loop
+4.7	WebAssembly
+4.8	Native bindings
+5	Project governance
+6	References
+7	Further reading
+8	External links
+History
+
+Ryan Dahl, creator of Node.js, in 2010
+Node.js was written initially by Ryan Dahl in 2009,[25] about thirteen years after the introduction of the first server-side JavaScript environment, Netscape's LiveWire Pro Web.[26] The initial release supported only Linux and Mac OS X. Its development and maintenance was led by Dahl and later sponsored by Joyent.[27]
+
+Dahl criticized the limited possibilities of the most popular web server in 2009, Apache HTTP Server, to handle a lot of concurrent connections (up to 10,000 and more) and the most common way of creating code (sequential programming), when code either blocked the entire process or implied multiple execution stacks in the case of simultaneous connections.[28]
+
+Dahl demonstrated the project at the inaugural European JSConf on November 8, 2009.[29][30][31] Node.js combined Google's V8 JavaScript engine, an event loop, and a low-level I/O API.[32]
+
+In January 2010, a package manager was introduced for the Node.js environment called npm.[33] The package manager makes it easier for programmers to publish and share source code of Node.js packages and is designed to simplify installation, updating, and uninstallation of packages.[32]
+
+In June 2011, Microsoft and Joyent implemented a native Windows version of Node.js.[34] The first Node.js build supporting Windows was released in July 2011.
+
+In January 2012, Dahl stepped aside, promoting coworker and npm creator Isaac Schlueter to manage the project.[35] In January 2014, Schlueter announced that Timothy J. Fontaine would lead the project.[36]
+
+In December 2014, Fedor Indutny started io.js, a fork of Node.js. Due to the internal conflict over Joyent's governance, io.js was created as an open governance alternative with a separate technical committee.[37][38] Unlike Node.js,[39] the authors planned to keep io.js up-to-date with the latest releases of the Google V8 JavaScript engine.[40]
+
+In February 2015, the intent to form a neutral Node.js Foundation was announced. By June 2015, the Node.js and io.js communities voted to work together under the Node.js Foundation.[41]
+
+In September 2015, Node.js v0.12 and io.js v3.3 were merged back together into Node v4.0.[42] This merge brought V8 ES6 features into Node.js and a long-term support release cycle.[43] As of 2016, the io.js website recommends that developers switch back to Node.js and that no further releases of io.js are planned due to the merge.[44]
+
+In February 2016, Node.js 0.10.42 is released.[45]
+
+In 2019, the JS Foundation and Node.js Foundation merged to form the OpenJS Foundation.
