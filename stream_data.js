@@ -3,9 +3,7 @@ const fs = require('fs')
 
 let obj = {};
 let copy = [];
-let unique = [];
 let arr = [];
-let index = 0;
 let total = 0;
 let count = 0;
 
@@ -47,6 +45,7 @@ readstream.on('data', (chunk) => {
   //  console.log(arr);
 
     console.log("unique words are");
+    console.log("--------------------");
      arr.forEach(element=>{
          if(element.times===1)
           console.log(element.word);
