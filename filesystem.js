@@ -7,11 +7,21 @@ fs.readFile('./nodejs1.txt', 'utf8', (err, data) => {
     console.error(err)
     return
   }
-  console.log("File Content : "+data);
-  var totalWords =data.toString();
+  //console.log("File Content : "+data);
+  var totalWords =data.toString().split(' ');
   var totalLength =totalWords.length;
-  console.log("Total Length : "+totalLength);
+  var wordCount = {}
+  //console.log("Total Length : "+totalLength);
+  totalWords.forEach(word => {
+    if (wordCount[word] === undefined) {
+			wordCount[word] = 1;
+		} else {
+		// if word already exists. update its count;
+			wordCount[word] = wordCount[word]+1;
+		}
 
+  });
+  console.log(wordCount);
 });
 /*
 readFileToObject();
