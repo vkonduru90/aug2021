@@ -44,3 +44,6 @@ fse.writeFile(abc, data.toString(), (err, writeResult)=>{
 })
 }
 k5('./bkp1/README_bkp1.md');
+fse.ensureFile('./bkp1/India.txt', (err, result)=>{
+  console.log(err, result);
+})
