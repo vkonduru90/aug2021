@@ -14,10 +14,10 @@ numArr.
 
 //node(25);
 
-
-f1(1000,);
-var b= add(4,5);
-console.log('B :'+b);
+function add(n1,n2){
+    var a=n1+n2;
+    return a;
+}
 
 
 function f1(a1){
@@ -29,7 +29,9 @@ function f1(a1){
 }
 
 
-function add(n1,n2){
-    var a=n1+n2;
-    return a;
-}
+f1(1000);
+var b= add(4,5);
+console.log('B :'+b);
+
+
+
