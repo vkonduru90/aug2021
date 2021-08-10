@@ -1,3 +1,4 @@
+const { each } = require('async');
 const fs = require('fs');
 
 const lineByLine = require('n-readlines');
@@ -9,19 +10,37 @@ fs.readFile('./nodejs1.txt', 'utf8', (err, data) => {
   }
   //console.log("File Content : "+data);
   var totalWords =data.toString().split(' ');
+  //console.log(''+totalWords);
   var totalLength =totalWords.length;
-  var wordCount = {}
+  var wordCount = {};
   //console.log("Total Length : "+totalLength);
   totalWords.forEach(word => {
-    if (wordCount[word] === undefined) {
+    console.log(word);
+
+
+
+
+
+    if (wordCount[word] == undefined) {
 			wordCount[word] = 1;
 		} else {
-		// if word already exists. update its count;
+		
 			wordCount[word] = wordCount[word]+1;
 		}
 
   });
+
   console.log(wordCount);
+  for (const words in wordCount) {
+    console.log(words +' = ' + wordCount[words]);
+  }
+  /*
+  
+  var keys =wordCount.keys();
+  console.log('Keys : '+keys);
+  keys.forEach(key =>{
+      console.log(key+' - '+wordCount[key]);
+  })*/
 });
 /*
 readFileToObject();
@@ -33,7 +52,7 @@ function readFileToObject() {
     if (wordCount[line] === undefined) {
 			wordCount[line] = 1;
 		} else {
-		// if word already exists. update its count;
+	
 			wordCount[line] = wordCount[line]+1;
 		}
   }

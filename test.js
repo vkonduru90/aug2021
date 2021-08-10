@@ -1,13 +1,24 @@
 /*
 var a="test";
 console.log(a);*/
-/*var obj=[{name:"geetha",age:"28", gender:"female", loaction:"tampa"}];
-console.log(obj);*/
 
+var obj = {};
+console.log(obj);
+obj['lastName'] = "Jeyaraman";
+obj['age'] = 28;
+obj['gender'] = 28;
+
+if(obj['location'] == undefined){
+    obj['location'] = 'Tampa';
+}
+
+
+console.log(obj['location']);
+console.log(obj);
 //var addition = add(1,4);
 
 
- 
+ /*
 var numArr = [5,10,15,20];
 
 numArr.
@@ -34,4 +45,9 @@ var b= add(4,5);
 console.log('B :'+b);
 
 
+
+
+var str = "G e e t h a";
+console.log(str.toString().split(' '));
+*/
 
