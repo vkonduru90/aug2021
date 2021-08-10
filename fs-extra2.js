@@ -3,8 +3,8 @@ const fs = require('fs');
 let myArrayString = [];
 let m = 0;
 let n = 0;
-// var x ;
-// var y ;
+var x ;
+var y ;
 let Arr1 = [];
 let myObj = {};
 
@@ -33,7 +33,20 @@ Arr1.forEach((element)=>{
   if (element.y===1)
   console.log(element.x);
  })
-})
+ function compare (a,b){
+   let c = 0;
+   let y = Arr1[object.y];
+   for (var i = 0; i < Arr1.length; i++)
+   {if (y[i] > y[i+1]){
+     c = 1;} else if
+     (y[i] < y[i+1]){
+     c = -1;}  
+    return c; 
+   }
+  }
+   Arr1.sort(compare);
+   console.log(Arr1[0]+','+Arr1[1]+','+Arr1[2]);
+ })
 
 readStream.on('close', ()=> {
   console.log('In close event...');
