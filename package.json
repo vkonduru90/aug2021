@@ -1,0 +1,26 @@
+{
+  "name": "@venki/aug2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --version && node index.js && dir"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkonduru90/aug2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkonduru90/aug2021/issues"
+  },
+  "homepage": "https://github.com/vkonduru90/aug2021#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
