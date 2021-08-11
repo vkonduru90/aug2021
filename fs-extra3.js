@@ -1,16 +1,38 @@
+const fs = require('fs');
+const path = require('path');
+function fileList(dir) {
+  return fs.readdirSync(dir).reduce(function(list, file) {
+    var name = path.join(dir, file);
+    var isDir = fs.statSync(name).isDirectory();
+    return list.concat(isDir ? fileList(name ) : [name]);
+  }, []);
+}
+var x = fileList('./bkp1');
+console.log(x);
+
+// const fs = require('fs-promise');
+// fs.walk('./bkp1').then(
+//     listing => listing.forEach(file => console.log(file.path))
+// ).catch(err => console.error(err));
+
+// const fs = require('mz/fs');
+// fs.readdir('./bkp1').then(listing => console.log(listing))
+//   .catch(err => console.error(err));
+
+
 // const fse = require('fs-extra');
 // const testFolder = './';
-const fs = require('fs');
-const testFolder = './bkp1/';
+// const fs = require('fs');
+// const testFolder = './bkp1/';
 // fs.readdirSync(testFolder, {withFileTypes: true})
 // .filter(item => !item.isDirectory())
 // .map(item => item.name)
-fs.readdirSync(testFolder).forEach(file => {
-    fs.readdirSync(testFolder, {withFileTypes: true})
-    .filter(file => !file.isDirectory())
-    .map(file => file.name);
-    console.log(file);
-  });
+// fs.readdirSync(testFolder).forEach(file => {
+//     fs.readdirSync(testFolder, {withFileTypes: true})
+//     .filter(file => !file.isDirectory())
+//     .map(file => file.name);
+//     console.log(file);
+//   });
 
 // let dir = './bkp1/';
 // function getFiles (dir, files_){

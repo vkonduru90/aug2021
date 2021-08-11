@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/vkonduru90/aug2021#readme",
   "dependencies": {
+    "fs-promise": "^2.0.3",
+    "mz": "^2.7.0",
     "nodemon": "^2.0.12"
   }
 }
