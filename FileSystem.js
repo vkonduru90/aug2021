@@ -41,7 +41,7 @@ fse.exists('./d.txt', (err, result) => {
   else
     console.log('the file d.txt should be deleted', result)
 });
-fse.unlink('./d.txt',(err,result)=>{
-  if(err)console.log("error",err);
-  else console.log('d.txt is deleted successfully',result);
+fse.unlink('./d.txt', (err, result) => {
+  if (err) console.log("error", err);
+  else console.log('d.txt is deleted successfully', result);
 });

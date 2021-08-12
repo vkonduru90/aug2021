@@ -1,0 +1,27 @@
+{
+  "name": "aug2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "events": "^3.3.0",
+    "fs-extra": "^10.0.0",
+    "n-readlines": "^1.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkonduru90/aug2021.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkonduru90/aug2021/issues"
+  },
+  "homepage": "https://github.com/vkonduru90/aug2021#readme"
+}
