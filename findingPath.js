@@ -36,7 +36,6 @@ fs.readdir(testFolder12, (err, files) => {
   if (files.length > 0) {
     files.forEach(file => {
       console.log(file);
-
     });
   }
   else {
@@ -47,7 +46,6 @@ fs.readdir(testFolder13, (err, files) => {
   if (files.length > 0) {
     files.forEach(file => {
       console.log(file);
-
     });
   }
   else {
@@ -58,7 +56,6 @@ fs.readdir(testFolder21, (err, files) => {
   if (files.length > 0) {
     files.forEach(file => {
       console.log(file);
-
     });
   }
   else {
@@ -69,7 +66,6 @@ fs.readdir(testFolder22, (err, files) => {
   if (files.length > 0) {
     files.forEach(file => {
       console.log(file);
-
     });
   }
   else {
@@ -80,7 +76,6 @@ fs.readdir(testFolder23, (err, files) => {
   if (files.length > 0) {
     files.forEach(file => {
       console.log(file);
-
     });
   }
   else {
