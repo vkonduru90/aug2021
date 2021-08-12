@@ -33,19 +33,45 @@ Arr1.forEach((element)=>{
   if (element.y===1)
   console.log(element.x);
  })
- function compare (a,b){
-   let c = 0;
-   let y = Arr1[object.y];
+ function compare (p,q){
+  
+  let c = 0;
+   myArrayString.forEach((element)=>{
+    for (let i = 0; i<myArrayString.length; i++){
+      if(element === myArrayString[i])
+      n++;
+      }
+   let myObj = {x: element, y: n};
+   Arr1.push(myObj);
+  n = 0;
+  })
    for (var i = 0; i < Arr1.length; i++)
-   {if (y[i] > y[i+1]){
+   var p = y[i];
+   var q = y[i+1];
+   {if (p > q){
      c = 1;} else if
-     (y[i] < y[i+1]){
+     (p < q){
      c = -1;}  
     return c; 
    }
   }
-   Arr1.sort(compare);
-   console.log(Arr1[0]+','+Arr1[1]+','+Arr1[2]);
+   console.log(JSON.stringify(Arr1[0]));
+   console.log(JSON.stringify(Arr1[1]));
+   console.log(JSON.stringify(Arr1[2]));
+   console.log(JSON.stringify(Arr1[3]));
+   console.log(JSON.stringify(Arr1[4]));
+   Arr1.sort;
+   console.log(JSON.stringify(Arr1[0]));
+   console.log(JSON.stringify(Arr1[1]));
+   console.log(JSON.stringify(Arr1[2]));
+   console.log(JSON.stringify(Arr1[3]));
+   console.log(JSON.stringify(Arr1[4]));
+   Arr1.compare;
+   console.log(JSON.stringify(Arr1[0]));
+   console.log(JSON.stringify(Arr1[1]));
+   console.log(JSON.stringify(Arr1[2]));
+   console.log(JSON.stringify(Arr1[3]));
+   console.log(JSON.stringify(Arr1[4]));
  })
 
 readStream.on('close', ()=> {

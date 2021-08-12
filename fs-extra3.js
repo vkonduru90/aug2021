@@ -1,15 +1,40 @@
 const fs = require('fs');
 const path = require('path');
+
 function fileList(dir) {
-  return fs.readdirSync(dir).reduce(function(list, file) {
+    return fs.readdirSync(dir).reduce(function(list, file) {
     var name = path.join(dir, file);
     var isDir = fs.statSync(name).isDirectory();
     return list.concat(isDir ? fileList(name ) : [name]);
   }, []);
+  
 }
-var x = fileList('./bkp1');
+const x = fileList('./bkp1');
 console.log(x);
+x.forEach((val)=>{
+let pathx = val;
+fs.lstat(pathx, (err, stats) => {
 
+  if(err)
+      return console.log(err); //Handle error
+
+  console.log(`Is file: ${stats.isFile()}`);
+  console.log(`Is directory: ${stats.isDirectory()}`);
+  // console.log(`Is symbolic link: ${stats.isSymbolicLink()}`);
+  // console.log(`Is FIFO: ${stats.isFIFO()}`);
+  // console.log(`Is socket: ${stats.isSocket()}`);
+  // console.log(`Is character device: ${stats.isCharacterDevice()}`);
+  // console.log(`Is block device: ${stats.isBlockDevice()}`);
+});
+})
+
+// // const fs = require('fs').promises;
+
+
+// // (async() => {
+//   const stat = await fs.lstat('./India');
+//   console.log(stat.isFile());
+// })().catch(console.error)
 // const fs = require('fs-promise');
 // fs.walk('./bkp1').then(
 //     listing => listing.forEach(file => console.log(file.path))
