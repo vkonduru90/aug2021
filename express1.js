@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const students = [];
+let   students = [];
 
 app.use(express.json());
 
@@ -31,7 +31,9 @@ app.delete('/student/:id', (req, res)=> {
     const student = students.find(student => student.id == id);
     Object.keys(body).forEach(key=>{
         if(student[key] == body[key])
-        {delete Object;}
+        {students = students.filer(function (obj){
+            return obj.id !== id;
+        });}
         console.log(body, '+++'); 
     });
     return res.status(200).json({student: student});    
