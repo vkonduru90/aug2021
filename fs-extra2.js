@@ -3,84 +3,90 @@ const fs = require('fs');
 let myArrayString = [];
 let m = 0;
 let n = 0;
-var x ;
-var y ;
+var x;
+var y;
 let Arr1 = [];
 let myObj = {};
 
 const readStream = fs.createReadStream('./bkp/India', 'utf-8');
 const writeStream = fs.createWriteStream('./bkp1/India.txt');
-readStream.on('open', ()=> {
+readStream.on('open', () => {
   console.log('file opened ...');
 })
-readStream.on('data',(chunk)=>{
+readStream.on('data', (chunk) => {
   myArrayString.push(chunk);
   myArrayString = myArrayString.toString().split(' ');
-  myArrayString.forEach((element)=>{
+  myArrayString.forEach((element) => {
     m++;
-    for (let i = 0; i<myArrayString.length; i++){
-      if(element === myArrayString[i])
-      n++;
-      }
-  console.log(element +'--'+n+' number'+'of times');
-  let myObj = {x: element, y: n};
-  Arr1.push(myObj);
-  n = 0;
-  })
-console.log('toal num of words =' +m);
-console.log('unique words are');
-Arr1.forEach((element)=>{
-  if (element.y===1)
-  console.log(element.x);
- })
- 
-  
-  function compare (p,q){
-  
-    let c = 0;
-     myArrayString.forEach((element)=>{
-      for (let i = 0; i<myArrayString.length; i++){
-        if(element === myArrayString[i])
+    for (let i = 0; i < myArrayString.length; i++) {
+      if (element === myArrayString[i])
         n++;
-        }
-     let myObj = {x: element, y: n};
-     Arr1.push(myObj);
-    n = 0;
-    })
-     for (var i = 0; i < Arr1.length; i++){
-     var p = (Arr1[i]).y;
-     var q = (Arr1[i+1]).y;
-     {if (p > q){
-       c = 1;} else if
-       (p < q){
-       c = -1;}  
-      return c; 
-     }
     }
-  
-      
-   console.log(JSON.stringify(Arr1[0]));
-   console.log(JSON.stringify(Arr1[1]));
-   console.log(JSON.stringify(Arr1[2]));
-   console.log(JSON.stringify(Arr1[3]));
-   console.log(JSON.stringify(Arr1[4]));
-   Arr1.sort();
-   console.log(JSON.stringify(Arr1[0]));
-   console.log(JSON.stringify(Arr1[1]));
-   console.log(JSON.stringify(Arr1[2]));
-   console.log(JSON.stringify(Arr1[3]));
-   console.log(JSON.stringify(Arr1[4]));
-   Arr1.sort(compare(y));
-   console.log(JSON.stringify(Arr1[0]));
-   console.log(JSON.stringify(Arr1[1]));
-   console.log(JSON.stringify(Arr1[2]));
-   console.log(JSON.stringify(Arr1[3]));
-   console.log(JSON.stringify(Arr1[4])); 
-  
-    
- })
+    console.log(element + '--' + n + ' number' + 'of times');
+    let myObj = { x: element, y: n };
+    Arr1.push(myObj);
+    n = 0;
+  })
+  console.log('toal num of words =' + m);
+  console.log('unique words are');
+  Arr1.forEach((element) => {
+    if (element.y === 1)
+      console.log(element.x);
+  })
+  function compare(p, q) {
 
-readStream.on('close', ()=> {
+    let c = 0;
+    myArrayString.forEach((element) => {
+      for (let i = 0; i < myArrayString.length; i++) {
+        if (element === myArrayString[i])
+          n++;
+      }
+      let myObj = { x: element, y: n };
+      Arr1.push(myObj);
+      n = 0;
+    })
+    for (var i = 0; i < Arr1.length; i++) {
+      var p = (Arr1[i]).y;
+      var q = (Arr1[i + 1]).y;
+      {
+        if (p > q) {
+          c = 1;
+        } else if
+          (p < q) {
+          c = -1;
+        }
+        return c;
+      }
+    }
+  }
+
+
+
+  console.log(JSON.stringify(Arr1[0]));
+  console.log(JSON.stringify(Arr1[1]));
+  console.log(JSON.stringify(Arr1[2]));
+  console.log(JSON.stringify(Arr1[3]));
+  console.log(JSON.stringify(Arr1[4]));
+  Arr1.sort();
+  console.log(JSON.stringify(Arr1[0]));
+  console.log(JSON.stringify(Arr1[1]));
+  console.log(JSON.stringify(Arr1[2]));
+  console.log(JSON.stringify(Arr1[3]));
+  console.log(JSON.stringify(Arr1[4]));
+  // Arr1.sort(compare);
+  // console.log(JSON.stringify(Arr1[0]));
+  // console.log(JSON.stringify(Arr1[1]));
+  // console.log(JSON.stringify(Arr1[2]));
+  // console.log(JSON.stringify(Arr1[3]));
+  // console.log(JSON.stringify(Arr1[4]));
+
+
+  
+ 
+})
+
+
+readStream.on('close', () => {
   console.log('In close event...');
 })
 
