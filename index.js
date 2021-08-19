@@ -1,34 +1,28 @@
 const express = require('express');
 const app = express();
 
+const { validateJWT } = require('./utils/jwt');
+
 app.use(express.json());
 
-const students = [];
+async function validateToken(req, res, next) {
+  const token = req.headers.authorization;
+  if(!token) {
+    return res.status(400).json({ message: 'Token Not found..' });
+  }
+  const result = await validateJWT(token);
+  next();
+}
+app.use('/secure', validateToken);
 
-app.post('/student', (req, res) => {
-  const body = req.body;
-  console.log(body, '==============');
-  body.id = students.length + 1;
-  students.push(body);
-  return res.status(200).json({students: students});
+app.use(express.static('./public'));
+
+app.use(require('./routes'));
+require('./dbs/mongo_db');
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
-app.get('/student', (req, res) => {
-  return res.status(200).json({students: students});
-});
-
-app.patch('/student/:id', (req, res) => {
-  const id = req.params.id;
-  const body = req.body;
-  const student = students.find(student => student.id == id);
-  Object.keys(body).forEach(key => {
-    student[key] = body[key];
-  });
-  return res.status(200).json({student: student});
-});
-
-app.delete('/student/:id', (req, res) => {
-  return res.status(200).json({message: 'From Students Delete'});
-});
-
-app.listen(3000, ()=> console.log('Server Started on 3000 ...'));
+app.listen(3000, () => console.log('Server Started on 3000 ...'));
