@@ -9,7 +9,7 @@
 {{'04/02/2022'|date:'fullDate'}}
 <div *ngIf="isRed">This is ngIf condition</div>
 <div *ngFor="let nummm of numbers"> {{nummm}}</div>
-<tr *ngFor="let student of students; trackBy:rollNum" >
+<!-- <tr *ngFor="let student of students; index as i; trackBy:rollNum()" > -->
 {{title}}
 <!-- <input type="text" name="title" value="title" (keyup)="updateTitle($event)"> -->
 <input type="text" name="title" [(ngModel)]="title">
@@ -18,3 +18,7 @@
 <input type="radio" name="country"  value = "us" (change)='myMouseOver($event)'>US
 <input type="radio" name="country"  value = "india" (change)='myMouseOver($event)'>INDIA
 <img src = '{{flag}}' alt="">
+This is from App Component......
+{{title}}
+<app-test [title]= title></app-test>
+<app-employee-count [count] = 100></app-employee-count>

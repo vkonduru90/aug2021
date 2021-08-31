@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SIGUSR2 } from 'constants';
 
 @Component({
   selector: 'app-root',
@@ -17,14 +16,11 @@ export class AppComponent {
   name = 'xyz';
   numbers = [10, 21, 43, 1,2,3,4,5];
 
-  students = [{nam: 's1', rolnum: 10},{nam: 's2' , rolnum: 5}, {nam: 's3' , rolnum: 4}];
+  // students = [{nam: 's1', rolnum: 10},{nam: 's2' , rolnum: 5}, {nam: 's3' , rolnum: 4}];
 
-  rolnum = this.students.rolnum;
-  nam = this.students.nam;
-
-  rollNum(rolnum: number, nam: string){
-    return this.students.rolnum;
-  }
+  // rollNum(index: number, student: any): any{
+  //   return this.students.rolnum;
+  // }
   classToApply = {
     'myclass': true,
     'mycolor': false,
