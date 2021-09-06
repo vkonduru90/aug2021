@@ -4,7 +4,7 @@ async function createUser(body) {
     // const user = await getUsers(body.name);
     const newuser = new Users(body);
     return newuser;
-    user.save().then((result) => {
+       newuser.save().then((result) => {
         console.log(result);
         return result;
     }).catch(e=>{

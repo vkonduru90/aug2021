@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student } from './student';
 
 @Component({
   selector: 'app-root',
@@ -15,12 +16,12 @@ export class AppComponent {
   isRed = true;
   name = 'xyz';
   numbers = [10, 21, 43, 1,2,3,4,5];
+  students:Student[] = [];
 
-  // students = [{nam: 's1', rolnum: 10},{nam: 's2' , rolnum: 5}, {nam: 's3' , rolnum: 4}];
+  rollNum(index: number, student: any): string{
+    return student.rolnum;
+  }
 
-  // rollNum(index: number, student: any): any{
-  //   return this.students.rolnum;
-  // }
   classToApply = {
     'myclass': true,
     'mycolor': false,
@@ -58,5 +59,9 @@ export class AppComponent {
     }else if (e.target.value == 'india'){
       this.flag = this.india;   
     }
+  }
+  appCompFun(data: any){
+    console.log(data, '=========');
+    this.students = data;
   }
 }
