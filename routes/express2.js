@@ -1,24 +1,25 @@
 const fs = require('fs');
 const fse = require('fs-extra');
+const cors = require('cors');
 const express = require('express');
 const { validateJWT } = require('../utils/jwt');
 const app = express();
 
     
-
+app.use(cors());
 
 app.use(express.json());
 
-async function validateToken(req, res, next) {
-   const token = req.headers.authorization;
-   if (!token){
-    return res.status(400).json({message: 'Token not found..'});
-   }
-   const result = await validateJWT(token);
-   next();
-}
+// async function validateToken(req, res, next) {
+//    const token = req.headers.authorization;
+//    if (!token){
+//     return res.status(400).json({message: 'Token not found..'});
+//    }
+//    const result = await validateJWT(token);
+//    next();
+// }
 
-app.use('/secure', validateToken);
+// app.use('/secure', validateToken);
 
 app.use(express.static('./public'));
 

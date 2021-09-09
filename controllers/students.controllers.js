@@ -1,10 +1,11 @@
 const Users = require('../models/users.models');
 
 async function createUser(body) {
-    // const user = await getUsers(body.name);
+    // const newuser = await getUsers(body.name);
     const newuser = new Users(body);
-    return newuser;
-       newuser.save().then((result) => {
+    // return newuser;
+       newuser.save()
+       .then((result) => {
         console.log(result);
         return result;
     }).catch(e=>{

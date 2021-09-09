@@ -1,5 +1,23 @@
-<p>employee-count works!</p>
+<!-- <p>employee-count works!</p>
 
 {{count}}
 
-<button (click)="manageButtonClick()">Click me</button>
+<button (click)="manageButtonClick()">Click me</button> -->
+
+<form #studentForm="ngForm" (ngSubmit) = "saveStudent(studentForm)">
+    <input type ="text" name="nam" id="nam" placeholder ="Enter Name" [(ngModel)]="student.nam"><br>
+    <input type ="text" name="lname" id="lname" placeholder ="Enter LastName" [(ngModel)]="student.lname"><br>
+    <input type ="text" name="uname" id="uname" placeholder ="Enter UserName" [(ngModel)]="student.uname"><br>
+    <input type ="text" name="password" id="password" placeholder ="Enter Password" [(ngModel)]="student.password"><br>
+    <input type ="text" name="rolnum" id="rolnum" placeholder ="Enter Roll Number" [(ngModel)]="student.rolnum"><br>
+    <button type="submit">Save Student</button>
+</form>
+
+<div>
+    {{studentForm.value | json}}
+    <!-- &nbsp; touched -- {{studentForm.touched}};
+    &nbsp; touched -- {{studentForm.touched}};
+    &nbsp; touched -- {{studentForm.touched}}; 
+    &nbsp; touched -- {{studentForm.touched}};
+    &nbsp; touched -- {{studentForm.touched}};    -->
+</div>

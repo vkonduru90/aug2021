@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 })
 router.post('/', upload.single('file'), async (req, res) => {
     const body = req.body;
-    if(!body.lastName){
+    if(!body.lname){
         return res.status(400).json({ message: 'lastName is required' });   
     }
     try{

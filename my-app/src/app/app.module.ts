@@ -14,6 +14,7 @@ import { StudentCreateComponent } from './student-create/student-create.componen
 import { StudentGetComponent } from './student-get/student-get.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { StudentSearchComponent } from './student-search/student-search.component';
+import { StudentInfoComponent } from './student-info/student-info.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StudentSearchComponent } from './student-search/student-search.componen
     StudentCreateComponent,
     StudentGetComponent,
     StudentDetailsComponent,
-    StudentSearchComponent
+    StudentSearchComponent,
+    StudentInfoComponent
   ],
   imports: [
     BrowserModule,
